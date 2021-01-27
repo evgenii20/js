@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_2</title>
+    <!-- script src="script.js" async></script -->
+
+</head>
+
+<body>
+    <script>
+        'use strict'; // критична к объявлению переменных
+
+        /**
+         * less_2
+         * 
+         * hw_6:  Реализовать функцию с тремя параметрами: 
+         * function mathOperation(arg1, arg2, operation), где arg1, 
+         * arg2 – значения аргументов, operation – строка с названием 
+         * операции. В зависимости от переданного значения операции выполнить 
+         * одну из арифметических операций (использовать функции из пункта 5) 
+         * и вернуть полученное значение (использовать switch).
+         *
+         * */
+
+
+        /**
+            * Функция сложения.
+            * @param {number} x
+            * @param {number} y
+            * @return {number}
+            */
+        function amount(x, y) {
+            return x + y;
+        };
+
+        /**
+             * Функция вычитания.
+             * @param {number} x
+             * @param {number} y
+             * @return {number}
+             */
+        function difference(x, y) {
+            return x - y;
+        };
+
+        /**
+             * Функция умножение.
+             * @param {number} x
+             * @param {number} y
+             * @return {number}
+             */
+        function multiplication(x, y) {
+            return x * y;
+        };
+
+        /**
+             * Функция деления.
+             * @param {number} x
+             * @param {number} y
+             * @return {number}
+             */
+        function division(x, y) {
+            return x / y;
+        };
+
+        /**
+             * Функция получает два числа и осуществляет над ними математическую операцию.
+             * @param {number} arg1
+             * @param {number} arg2
+             * @param {string} operation может быть "+", "-", "*", "/".
+             * @return 
+             */
+        /**var arg1 = 8;
+        var arg2 = 4;
+        var operation = '+';
+        */
+        var arg1 = +prompt("Введите 1-е число: ");
+        var arg2 = +prompt("Введите 2-е число: ");
+        var operation = prompt("Введите одну из операций '+, -, *, /': ");
+
+        function mathOperation(arg1, arg2, operation) {
+            switch (operation) {
+                case "+":
+                    return amount(arg1, arg2);
+                case "-":
+                    return difference(arg1, arg2);
+                case "*":
+                    return multiplication(arg1, arg2);
+                case "/":
+                    return division(arg1, arg2);
+                default:
+                    return ("Операция " + operation + " неизвестна");
+            }
+        };
+
+        console.log(mathOperation(arg1, arg2, operation));
+
+    </script>
+</body>
+
+</html>
