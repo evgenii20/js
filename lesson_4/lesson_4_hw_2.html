@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson_4_hw_2</title>
+<!--    <script src="script.js" async></script>-->
+<script>
+    'use strict'; // критична к объявлению переменных
+
+    /**
+     * less_4
+     *
+     * hw_2: Продолжить работу с интернет-магазином:
+     * 2.1. В прошлом домашнем задании вы реализовали корзину на базе массивов.
+     * Какими объектами можно заменить их элементы?
+     * 2.2. Реализуйте такие объекты.
+     * 2.3. Перенести функционал подсчета корзины на объектно-ориентированную базу.
+     *
+     * */
+
+
+    /**
+     * 2.1. В прошлом домашнем задании вы реализовали корзину на базе массивов.
+     * Какими объектами можно заменить их элементы?
+     * 2.2. Реализуйте такие объекты.
+     * @type {({id_product: number, quantity: number, product_names: string, price: number}|
+     * {...}|
+     * {...}|
+     * {id_product: number, quantity: number, product_names: string, price: number})[]}
+     */
+    const objProductBasket = [
+        {id_product: 10,
+            product_names: 'Яблоки',
+            price: 40,
+            quantity: 1},
+        {id_product: 20,
+            product_names: 'Грушы',
+            price: 50,
+            quantity: 1},
+        {id_product: 30,
+            product_names: 'Виноград',
+            price: 100,
+            quantity: 1},
+        {id_product: 40,
+            product_names: 'Мандарины',
+            price: 60,
+            quantity: 1},
+    ];
+
+    let basketPrice = null;
+    let basketProduct = null;
+
+    /**
+     * 2.3. Перенести функционал подсчета корзины на объектно-ориентированную базу.
+     * Функция countBasketPrice считает стоимость корзины.
+     *
+     * @returns {string}
+     */
+    function countBasketPrice() {
+
+        for (let i = 0; i < objProductBasket.length; i++) {
+            basketPrice += objProductBasket[i].price;
+            if (basketProduct === null){
+                basketProduct = '\n'+ objProductBasket[i].product_names + ',\n';
+            } else {
+            basketProduct += objProductBasket[i].product_names + ',\n';
+            }
+        }
+        // console.log(`В вашей корзине: ${basketProduct}\nна сумму: ${basketPrice} руб.`);
+        return (`В вашей корзине: ${basketProduct}\nна сумму: ${basketPrice} руб.`)
+    }
+    console.log(countBasketPrice());
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
