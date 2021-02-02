@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson_3_hw_1</title>
+<!--    <script src="script.js" async></script>-->
+<script>
+    'use strict'; // критична к объявлению переменных
+
+    /**
+     * less_3
+     *
+     * hw_1:  С помощью цикла while вывести все простые числа в промежутке от 0 до 100.
+     *
+     * */
+
+    let i = 0;
+    const NUM = 100;
+
+    /**
+     * Функция определяет простое число от 0 до i
+     * @param i
+     * @returns {boolean}
+     */
+    function isSimple (i) {
+        if (i === 1 || i === 0) {
+            return false;
+        } else {
+            for(let j = 2; j < i; j++) {
+                if(i % j === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+
+    while (i < NUM) {
+        if (isSimple(i)) {
+            console.log(i);
+        }
+        i++;
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>

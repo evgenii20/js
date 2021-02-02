@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lesson_3_hw_4</title>
+<!--    <script src="script.js" async></script>-->
+<script>
+    'use strict'; // критична к объявлению переменных
+
+    /**
+     * less_3
+     *
+     * hw_4: *Нарисовать пирамиду с помощью console.log, как показано на рисунке,
+     * только у вашей пирамиды должно быть 20 рядов, а не 5:
+     * x
+     * xx
+     * xxx
+     * xxxx
+     * xxxxx
+     */
+
+    let arrX = [];        // Создать пустой массив
+    let NUM = 21;   // 20] Включительно
+    let k = 1;
+    while (k < NUM){
+        if (arrX.length < NUM){  // Если длинна массива меньше заданного числа,
+            arrX.push('x');      // Добавить значение в конец
+        } //else break;
+        console.log(`${k}: ${arrX}`) // Вывод номера строки и элементов массива
+        k++;
+    }
+</script>
+</head>
+<body>
+
+</body>
+</html>
